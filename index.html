@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style-tab.css">
+</head>
+<body>
+    <div class="navbar">
+        <a class="submenu-btn" href="" style="font-size:20px;cursor:pointer;" onclick="event.preventDefault(); openNav()"> &#9776</a>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </div>
+    <div class="container">
+        <div class="submenu" id="mySubmenu">
+            <a class="close-btn" href="#" onclick="event.preventDefault(); closeNav()">&times;</a>
+            <a href="#">Submenu 1</a>
+            <a href="#">Submenu 2</a>
+            <a href="#">Submenu 3</a>
+        </div>
+        <div class="content">
+            <div class="content-header">
+                <h1>Product Management</h1>
+                <button class="btn btn-primary" onclick="openProductModal()">+ Add Product</button>
+            </div>
+
+    
+            <div class="table-responsive">
+                <table class="product-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Product Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Stock</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#101</td>
+                            <td>Wireless Mouse</td>
+                            <td>Electronics</td>
+                            <td>$25.00</td>
+                            <td>45</td>
+                            <td><button class="btn-delete">Delete</button></td>
+                        </tr>
+                        <tr>
+                            <td>#102</td>
+                            <td>Mechanical Keyboard</td>
+                            <td>Electronics</td>
+                            <td>$85.00</td>
+                            <td>12</td>
+                            <td><button class="btn-delete">Delete</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Product</h2>
+                <span class="modal-close" onclick="closeProductModal()">&times;</span>
+            </div>
+            <form id="productForm" onsubmit="event.preventDefault(); alert('Product Added!'); closeProductModal();">
+                <div class="form-group">
+                    <label for="pName">Product Name</label>
+                    <input type="text" id="pName" required placeholder="Enter product name">
+                </div>
+                <div class="form-group">
+                    <label for="pCategory">Category</label>
+                    <input type="text" id="pCategory" required placeholder="Enter category">
+                </div>
+                <div class="form-group">
+                    <label for="pPrice">Price ($)</label>
+                    <input type="number" id="pPrice" step="0.01" required placeholder="0.00">
+                </div>
+                <div class="form-group">
+                    <label for="pStock">Stock Quantity</label>
+                    <input type="number" id="pStock" required placeholder="0">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeProductModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+    
+
+
+<script src="./js/app.js"></script>
+</body>
+</html>

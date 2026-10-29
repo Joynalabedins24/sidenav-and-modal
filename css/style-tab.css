@@ -1,0 +1,13 @@
+@media (max-width: 800px) {
+    .submenu-btn {
+        display: block;
+        color: white;
+        background-color: #005f19;
+        cursor: pointer;
+    }
+    .submenu {
+        display: none;
+        width: 200px;
+        transition: width 0.8s ease;
+    }
+}
